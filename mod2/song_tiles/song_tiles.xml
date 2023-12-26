@@ -1,0 +1,51 @@
+<data>
+    <tilesheet id='aggro.png' width='16' height='10'/>
+    <tilesheet id='mobili.png' width='16' height='10' />
+    <tilesheet id='aggrobolt.png' width='16' height='10'/>
+    <tilesheet id='aggrosphere.png' width ='5' height='5'/>
+    <tilesheet id='aggroshard.png' width='16' height='10'/>
+    <tilesheet id='mobilibolt.png' width='16' height='10'/>
+    <tilesheet id='aggroexplode.png' width='32' height='32'/>
+    <tilesheet id='shock.png' width='64' height='15' />
+    <tilesheet id='vortex.png' width='16' height='10'/>
+    <tilesheet id='quake.png' width='64' height='64'/>
+    <animation id='equipment.aggroshock.idle' count='5' />
+    <animation id='equipment.aggroshock' x='5' count='6' offsetX='-1'/>
+    <animation id='equipment.aggrodetonate.idle' x='0' count='5' />
+    <animation id='equipment.aggrodetonate' x='0' count='6' offsetX='-1'/>
+    <animation id='equipment.aggrosphere.idle' equals='equipment.aggrodetonate.idle' />
+    <animation id='equipment.aggrosphere' equals='equipment.aggrodetonate' />
+    <animation id='equipment.aggroshard'  x='0' count='1' offsetX='-1'/>
+    <animation id='equipment.aggroshard.idle' equals='equipment.aggrodetonate.idle'/>
+    <animation id='equipment.aggroblast.idle' equals='equipment.aggrodetonate.idle' />
+    <animation id='equipment.aggroblast' equals='equipment.aggrodetonate'/>
+    <animation id='equipment.aggrovortex' equals='equipment.aggrodetonate' />
+    <animation id='equipment.aggrovortex.idle' equals='equipment.aggrodetonate.idle'/>
+    <animation id='equipment.aggroquake.idle' equals='equipment.aggrodetonate.idle'/>
+    <animation id='equipment.aggroquake' equals='equipment.aggrodetonate'/>
+    <animation id='equipment.mobiliflash.idle' x='0' count='5' />
+    <animation id='equipment.mobiliflash' x='0' count='5' offsetX='-1'/>
+    <animation id="aggrospherefire.idle" count="2" offsetY='1'/>
+    <animation id='aggroshardfire.idle' count='2'/>
+    <animation id='mobilibolt.idle' count='2'/>
+    <animation id='aggroexplode' count='3' fps='2'/>
+    <animation id='quake' count='2' repeat='6'/>
+    <hitEffect id='aggroexplode' tile='aggroexplode' animation='aggroexplode' />
+    <tile id='aggro.ico' sheet='aggro.png' x='0' count='5' />
+    <tile id='aggroshock' sheet='shock.png' x='0' count='5' offsetX='-30' />
+    <tile id='aggrobolt' sheet='aggrobolt.png' x='0'  />
+    <tile id='aggrosphere' sheet='aggro.png' x='0' offsetX='-4' />
+    <tile id='aggrospherefire' sheet='aggrosphere.png' x='0' />
+    <tile id='aggrodetonate' equals='aggrosphere' />
+    <tile id='aggroshard' equals='aggrosphere'/>
+    <tile id='aggroshardfire' sheet='aggroshard.png' x='0' count='2'/>
+    <tile id='mobili.ico' sheet='mobili.png' x='0' count='5' />
+    <tile id='mobiliflash' sheet='mobili.png' x='0' count='5' offsetX='-4'/>
+    <tile id='mobilibolt' sheet='mobilibolt.png' x='0' count='2'/>
+    <tile id='aggroexplode' sheet='aggroexplode.png' x='0' count='3' fps='2'/>
+    <tile id='aggroblast' equals='aggrosphere'/>
+    <tile id='aggrovortex' equals='aggrosphere'/>
+    <tile id='vortex' sheet='vortex.png' x='0' />
+    <tile id='aggroquake' equals='aggrosphere' />
+    <tile id='quake' sheet='quake.png' x='0' /> 
+</data>

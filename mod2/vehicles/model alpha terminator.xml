@@ -1,0 +1,66 @@
+<data>
+    <tilesheet id="model alpha terminator.png" width="80" height="60" />
+    <tile id="model alpha terminator" sheet="model alpha terminator.png" />
+    <tilesheet id="model alpha terminator ico.png" width="16" height="10"/>
+    <tile id="model alpha terminator.ico" sheet="model alpha terminator ico.png" x="0" y='0'/>
+    <animation id="model alpha terminator.idle" x="0" count="1" />
+    <animation id="model alpha terminator.move" x="0" count="2" />
+    <!--flying and spaceship-->
+    <animation id="model alpha terminator.fly" x='1' count='2' />
+	<animation id='model alpha terminator.fire'>
+		<frame x='1' count='2' repeat='5'/>
+	</animation>
+    <animation id="model alpha terminator.hover" equals="model alpha terminator.move" />
+    <!--submarine-->
+    <animation id="model alpha terminator.dive" x="0" count="3" reverse='true'/>
+    <animation id="model alpha terminator.collect" x="1" count="2" />
+    <animation id="model alpha terminator.surface" x="0" count="3" reverse='true'/>
+    <!--spaceship-->
+    <animation id="model alpha terminator.ftl" x="0" count="3">
+        <append tile="exo_fighter" animation="exo_fighter.impulse" />
+    </animation>
+    <!--<vehicle id="model alpha terminator" tile="model alpha terminator" health="500" defense="0" speed="5" title="itemName('vehicle.model alpha terminator', this.name)" max_weight="4000" item="model alpha terminator" tilesBehind="true" mine='5' mine_fuel='1' waterLine="45" efficiency='0.25' fuel='3000' tooltipVehicle='true' tooltip='structure.tooltip.model alpha terminator' fuelName='gasgasgas' allowRename='true' includeName='true' hitDamage='10' bgm='FlawlessWings1' walk_sfx='destroyer-humm' death_sfx='MATdeath' repair_sfx='MATrepair' hit_sfx='MAThurt' showMine='true'>
+        <repair id="steel_bar" value="250" />
+        <player x="15" y="18" animation="idle"/>
+    </vehicle>-->
+    <!--<vehicle id="model alpha terminator" tile="model alpha terminator" health="500" defense="0" speed="5" title="itemName('vehicle.model alpha terminator', this.name)" max_weight="4000" item="model alpha terminator" tilesBehind="true" mine='5' mine_fuel='1' type="flying" waterLine="45" efficiency='0.25' fuel='3000' tooltipVehicle='true' tooltip='structure.tooltip.model alpha terminator' fuelName='gasgasgas' allowRename='true' includeName='true' hitDamage='10' bgm='FlawlessWings1'  walk_sfx='destroyer-humm' death_sfx='MATdeath' repair_sfx='MATrepair' hit_sfx='MAThurt' showMine='true' dismountFlying='false' flight_height='50' flyOrbit='false' canJump='true' explodeCliff='false' flyMove='false' underwater='true' hasO2='true'>
+        <repair id="steel_bar" value="250" />
+        <player x="15" y="18" animation="idle"/>
+    </vehicle>-->
+    <!--<vehicle id="model alpha terminator" tile="model alpha terminator" health="500" defense="0" speed="5" title="itemName('vehicle.model alpha terminator', this.name)" max_weight="4000" item="model alpha terminator" tilesBehind="true" mine='5' mine_fuel='1' waterLine="45" type="submarine" efficiency='0.25' fuel='3000' tooltipVehicle='true' tooltip='structure.tooltip.model alpha terminator' fuelName='gasgasgas' allowRename='true' includeName='true' hitDamage='10' bgm='FlawlessWings1' walk_sfx='destroyer-humm' death_sfx='MATdeath' repair_sfx='MATrepair' hit_sfx='MAThurt' showMine='true'>
+        <repair id="steel_bar" value="250" />
+        <player x="15" y="18" animation="idle"/>
+    </vehicle>-->
+    <item id="model alpha terminator" type="object" icon="model alpha terminator.ico" durability="500" durabilityName="common.health" durabilityIcon="vehicle_health" weight='20'>
+        <action id="plant" name="vehicle.deploy" object="model alpha terminator" onGrass="false" overlapBlueprints="true" overlapStructures="true" removeBushes="false" underwater='true' underground='true' on_air='true'> <!--deploy vehicle. Put your vehicle id in object.-->
+                <!--The tag below is executed before the object is placed. The object variable means the object to be placed.-->
+                <!--The below is the process of loading your vehicle data.-->
+            <action>
+                object.setHealth(this.getFeed());
+                fewl = Item.getParameter(this.getNameStr(), "d");
+                if(fewl != null) object.setFuel(Std.parseInt(fewl));
+                object.name=this.getNameStr();
+            </action>
+            <equip eval="p" to="object" fromInventory="false" if="p != null" /> <!--equip your vehicle's equipment-->
+        </action>
+    </item>
+	<recipe id="jump_cost1"><item id="cheeseburger" count='2'/></recipe>
+    <vehicle id="model alpha terminator" tile="model alpha terminator" health="500" defense="5" speed="5" title="itemName('vehicle.model alpha terminator', this.name)" max_weight="4000" item="model alpha terminator" tilesBehind="true" mine='5' mine_fuel='1' waterLine="45" type="spaceship" efficiency='0.25' fuel='3000' tooltipVehicle='true' tooltip='structure.tooltip.model alpha terminator' fuelName='gasgasgas' allowRename='true' includeName='true' hitDamage='10' bgm='FlawlessWings1' walk_sfx='destroyer-humm' death_sfx='MATdeath' repair_sfx='MATrepair' dismountFlying='true' hit_sfx='MAThurt' showMine='true' flight_height='200' hasO2='true' begin_walk_sfx='revup' jumpCost='jump_cost1'>
+		<jumpCost id='jump_cost1'/>
+        <listItem title="vehicle.pack_up">
+            <closeWindows /> <!-- Close vehicle management window -->
+            <action>this.dismount();</action> <!-- Dismount player -->
+            <invokeLater> <!--Executed after the dismounting process has been completed.-->
+                <section if="player.vehicle == null">
+                    <action>player.inventory.addAll(this.inventory);</action> <!-- Adds all items in the vehicle's inventory (this.inventory) to the player's inventory. -->
+                    <remove object="this" /><!-- Remove this vehicle object to the area. -->
+                    <item id="model alpha terminator" value="this.health" name='this.name'> <!-- Get packed vehicle item -->
+                        <parameter id='d' value='Std.string(this.fuel)'/>
+                    </item>
+                </section>
+            </invokeLater>
+        </listItem>
+        <repair id="steel_bar" value="250" />
+        <player x="15" y="18" animation="idle"/>
+    </vehicle>
+</data>

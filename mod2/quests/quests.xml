@@ -1,0 +1,5 @@
+<data>
+    <quest id="bloody_blood" giver="thalleous" exp="666">
+        <item id="dragonblood" count="10" />
+    </quest>
+</data>

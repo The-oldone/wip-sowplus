@@ -1,0 +1,90 @@
+<data>
+    <item id='aggrosphere' type='equipment' slot='weapon' attack='15' durability='5' breakable='false' weight='2' range='12' stamina='15' icon='aggro.ico' animation='equipment.aggrosphere.idle' action='equip' durabilityName='common.cooldown' arms='equipment.arms'>
+        <equipCost durability='-1'/>
+        <projectile tile='aggrospherefire' animation='aggrospherefire.idle' speed='2' hitEffect="aggroexplode" knockback='15'  />
+    </item>
+	<recipe id='make_aggrosphere' creates='aggrosphere' type='growth' available="player.questComplete('dragon_ship')">
+		<item id='blood_gem' count='2'/>
+		<item id='alter_gem' count='5'/>
+		<item id='fish_scale' count='5'/>
+	</recipe>
+    <item id="aggroshock" type='equipment' slot='weapon' attack="10" durability="5" weight='2' breakable='false' melee_range="4" stamina='10' icon='aggro.ico' animation='equipment.aggroshock.idle' action='equip' movement_walk='arms.rswing' durabilityName='common.cooldown' arms='equipment.arms'>
+        <equipCost durability='-1' />
+    </item>
+	<recipe id='make_aggroshock' creates='aggroshock' type='growth' available="player.questComplete('dragon_ship')">
+		<item id='blood_gem' count='2'/>
+		<item id='alter_gem' count='5'/>
+		<item id='fish_scale' count='5'/>
+	</recipe>
+    <item id='aggroblast' type='equipment' slot='weapon' attack='15' durability='5' weight='2' breakable='false' range='8' stamina='10' icon='aggro.ico' animation='equipment.aggroblast.idle' action='equip' durabilityName='common.cooldown' arms='equipment.arms'>
+        <equipCost durability='-1'/>
+        <projectile tile='aggrospherefire' animation='aggrospherefire.idle' speed='5' hitEffect="aggroexplode" knockback='10'  />
+    </item>
+    <recipe id='make_aggroblast' creates='aggroblast' type='hq_growth'>
+        <item id='blood_gem' count='5'/>
+        <item id='magnegem' count='2'/>
+        <item id='fish_scale' count='9'/>
+    </recipe>
+    <item id='aggrodetonate' type='equipment' slot='weapon' attack='7' range='12' weight='2' durability='5' icon='aggro.ico' animation='equipment.aggrodetonate.idle' action='equip' breakable='false' durabilityName="common.cooldown" stamina='10' arms='equipment.arms'>
+        <equipCost durability="-1" />
+        <projectile tile='aggrobolt' animation='item8' leftRight='true' speed='5' >
+            <light tile="light.small" color="cc5500" />
+		</projectile>
+    </item>
+	<recipe id='make_aggrodetonate' creates='aggrodetonate' type='growth' available="player.questComplete('dragon_ship')">
+		<item id='blood_gem' count='2'/>
+		<item id='alter_gem' count='5'/>
+		<item id='fish_scale' count='5'/>
+	</recipe>
+    <item id='aggroshard' type='equipment' slot='weapon' attack='7' durability='15' weight='2' breakable='false' range='12' stamina='3' icon='aggro.ico' animation='equipment.aggroshard.idle' action='equip' durabilityName='common.cooldown' arms='equipment.arms'>
+        <equipCost durability='-3'/>
+        <projectile tile='aggroshardfire' animation='aggroshardfire.idle' speed='4' leftRight='true' />
+    </item>
+	<recipe id='make_aggroshard' creates='aggroshard' type='growth' available="player.questComplete('dragon_ship')">
+		<item id='ink' count='2'/>
+		<item id='alter_gem' count='5'/>
+		<item id='fish_scale' count='5'/>
+	</recipe>
+    <item id='aggrovortex' type='equipment' slot='weapon' attack ='10' durability='5' weight='2' breakable='false' range='12' stamina='12' icon='aggro.ico' animation='equipment.aggrovortex.idle' action='equip' durabilityName='common.cooldown' arms='equipment.arms'>
+        <equipCost durability='-1'/>
+        <projectile tile='vortex'  speed='4'/>
+    </item>
+    <recipe id='make_aggrovortex' creates='aggrovortex' type='growth'>
+        <item id='ink' count='2'/>
+        <item id='alter_gem' count='5'/>
+        <item id='fish_scale' count='5'/>
+    </recipe>
+    
+    <object id="quake" tile="quake" animation="quake" fps="15" removeOnComplete="true" save="false" layer="item">
+        <addedToArea><action>
+            count = 0.0; function canDamage(o){
+                return o != spawner &amp;&amp; spawner.projectileCanHurt(o) &amp;&amp; o.attackPower(1, 0, 0, null, false) &gt; 0 &amp;&amp; o.getDefense(false, false, false) &lt; 20;
+            }
+        </action></addedToArea>
+        <initRenderer><action>this.alpha = 0;</action><lerp object="this" alpha="1" seconds="0.125" modal='false' /></initRenderer>
+        <onFrame>count += frames; if(count &gt;= 8){count -= 8; for(o in this.getOverlappingObjects(canDamage)) o.damage(damage, FLAG_IGNORE_DEFENSE|FLAG_HIDE_ATTACKER, player);}</onFrame>
+    </object>
+    <item id="aggroquake" type='equipment' slot="weapon" use="attack" breakable='false' durability='2' weight="2" stamina="4" icon="aggro.ico" action="equip" animation='equipment.aggroquake.idle' durabilityName='common.cooldown' arms='equipment.arms'> 
+        <equipCost durability='-1'/>
+        <doAttack><object id="quake" x="player.tile_x-2" y="player.tile_y+2" >this.vars.set("spawner", player); this.vars.set("damage", 25);</object></doAttack>
+    </item>
+    <recipe id='make_aggroquake' creates='aggroquake' type='hq_growth'>
+        <item id='evo_gem' count='1'/>
+        <item id='magnegem' count='2'/>
+        <item id='fish_scale' count='6'/>
+    </recipe>
+    
+    <item id='mobiliflash' type='equipment' slot='weapon' durability='5' breakable='false' weight='2' range='8' stamina='5' icon='mobili.ico' animation='equipment.mobiliflash.idle' action='equip' durabilityName='common.cooldown' attack='1' arms='equipment.arms'>
+        <equipCost durability='-1'/>
+        <projectile tile="mobilibolt" animation='mobilibolt.idle' spawner="player" spawnX="0" spawnY="0" speed="4" pierce='true' dx="player.getDX()">
+        <removed>
+        <move object="player" x="this.tile_x-(player.getDX())" y="this.tile_y"/>
+        </removed>
+        </projectile>
+    </item>
+	<recipe id='make_mobiliflash' creates='mobiliflash' type='hq_growth' >
+		<item id='ink' count='2'/>
+		<item id='magnegem' count='5'/>
+		<item id='exotic_matter' count='2'/>
+	</recipe>
+</data>

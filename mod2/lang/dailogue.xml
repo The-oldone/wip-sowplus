@@ -1,0 +1,55 @@
+<data>
+	<lang id="en_US">
+		<section id="quest.description">
+			<text id="bloody_blood">is uwu == ara ?</text>
+		</section>
+		<section id='quests'>
+			<text id='bloody_blood'> uwuara~</text>
+		</section>
+		<section id='thalleous'>
+			<text id="introduce1">uwuwuwuwu</text>
+			<text id="blood1">arararara~</text>
+			<text id="blood2">uwuwuwuwu != arararara~</text>
+			<text id="blood3">wawbdlkn klgfpfkksd klklmlkdggffgkkgkfdmsfdsjdnnkmkkkm bnkmkmnbjfdilmnbvnhcgfhggyhhgvbfcjhgfdhgf</text>
+			<text id="blood4">sorry my cat walked across my keyboard</text>
+			<text id="bs1">  well at least i completed this</text>
+			<text id="bs2">Now is the time for all good men to come to the aid of their party. I^H Because I would not stop for death he ^H^H^H^H^H^H^H^H^H Death he kindly stopped for me. Red Sky in Morning Sailor take e^H wArning.</text>
+		</section>
+		<section id='npc'>
+			<text id='thalleous'>Thalleous</text>
+		</section>
+		<section id="vehicle">
+			<text id="model alpha terminator">Terminator</text>
+		</section>
+		<section id='structure.tooltip'>
+			<text id='model alpha terminator'>Activate destructor</text>
+		</section>
+		<section id='common'>
+			<text id='gasgasgas'>GASGASGAS</text>
+			<text id='add_gasgasgas'>Fill with gas</text>
+		</section>
+		<section id='item.names'>
+			<text id='ardoni essence'>Ardoni Essence</text>
+			<text id='model alpha terminator'>Terminator</text>
+			<text id="aggroshock">AggroShock</text>
+			<text id='aggrodetonate'>AggroDetonate</text>
+			<text id='aggrosphere'>AggroSphere</text>
+			<text id='aggroshard'>AggroShard</text>
+			<text id='mobiliflash'>MobiliFlash</text>
+			<text id='aggroblast'>AggroBlast</text>
+			<text id='aggrovortex'>AggroVortex</text>
+			<text id='aggroquake'>AggroQuake</text>
+		</section>
+		<section id='item.descriptions'>
+			<text id='ardoni essence'>a fundamental part of the ardoni anatomy</text>
+			<text id='aggroshock'>Shoots an invisible shockwave to a certain distance</text>
+			<text id='aggrodetonate'>Shoots 2 bolts of aggresium energy in both sides</text>
+			<text id='aggrosphere'>Shoots a slow moving ball of energy that explodes on impact</text>
+			<text id='aggroshard'>Shoots aggresium shards in rapid succession</text>
+			<text id='aggroblast'>Shoots a cone shaped projectile that explodes on impact</text>
+			<text id='mobiliflash'>Teleports you to the projectiles impact site</text>
+			<text id='aggrovortex'>Sends a small vortex of aggresium energy</text>
+			<text id='aggroquake'>Causes a shockwave in close proximity</text>
+		</section>
+	</lang>
+</data>

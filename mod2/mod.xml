@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mod>
+    <name>Songs of war campaign</name>
+    <description>Adds some lore and quests based on the webseries 'Songs of War' (NOTE: this is completely independent of the 'songs of war mod')</description>
+    <author>The old one</author>
+    <version>0.1.0</version>
+    <!-- <requires>Full Version</requires> -->
+    <init>
+        <include id="lang/dailogue.xml"/>
+        <include id="quests/quests.xml"/>
+        <include id="npcs/thalleous.xml"/>
+        <include id="ardoni/ardoni.xml"/>
+        <include id="vehicles/model alpha terminator.xml"/>
+        <include id='soundSoWcampaign/soundsSoWcampaign.xml'/>
+        <include id='area/ardoni base.xml'/>
+        <include id='song_tiles/song_tiles.xml'/>
+        <include id='songs/songs.xml'/>
+    </init>
+</mod>

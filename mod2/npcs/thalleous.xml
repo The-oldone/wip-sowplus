@@ -1,0 +1,30 @@
+<npcs>
+    <npc id="thalleous" animation="thalleous" tile="thalleous" action="talk" talk_sfx="talking3" speed='2' night="true">
+        <light tile="sendarisglow" colorscale='3'/>
+        <idle class="wander" fromX='0' toX='10'/>
+        <operate>
+            <section if="!player.hasQuest('bloody_blood')">
+                <dialogue section="thalleous" id="introduce1" speaker='this' />
+                <quest id="bloody_blood" />
+            </section>
+            <choose if="!player.questComplete('bloody_blood')">
+                <section if="player.canCompleteQuest('bloody_blood')">
+                    <dialogue section="thalleous" id="blood1" speaker='this' />
+                    <complete quest="bloody_blood" />
+                    <item id="diamond"/>
+                    <dialogue section="thalleous" id="blood2" speaker='this' />
+                </section>
+                <group>
+                    <section>
+                        <dialogue section="thalleous" id="blood3" speaker='this' />
+                        <dialogue section="thalleous" id="blood4" speaker="player"/>
+                    </section>
+                </group>
+            </choose>
+            <group>
+                <dialogue section="thalleous" id="bs1" speaker="this"/>
+                <dialogue section="thalleous" id="bs2" speaker="this"/>
+            </group>
+        </operate>
+    </npc>
+</npcs>

@@ -1,0 +1,22 @@
+<data>
+    <music id='FlawlessWings1'>
+        <track id='flawlesswings' />
+    </music>
+    <sound id='revup'/>
+    <volume name='revup' value='300'/>
+    <sound id='destroyer-humm'/>
+    <sound id='MAThurt'/>
+    <volume name='MAThurt' value='1000'/>
+    <sound id='MATrepair'/>
+    <sound id='MATdeath'/>
+    <!--<sound id='MATland'/>
+    <sound id='takeoff_sfx'/>
+    <sound id='enter_sea_sfx'/>
+    <sound id='exit_sea_sfx'/>
+    <sound id='MATsurface'/>
+    <sound id='MATdive'/>
+    <sound id='MATcollect'/>
+    <sound id='takeoff_sfx'/>
+    <sound id='takeoff_sfx'/>
+    -->
+</data>

@@ -1,0 +1,21 @@
+<data>
+	<tilesheet id='ardoni world tile1.png' width='16' height='16'/>
+	<tile id='ardoni world tile1' sheet='ardoni world tile1.png' x='0'/>
+	<tilesheet id='ardoni essence.png' width='16' height='16'/>
+	<tile id='ardoni essence' sheet='ardoni essence.png' x='0'/>
+	<animation id='ardoni essence' count='9' x='0'/>
+	<dig id='ardoni world tile1' cost='2'/>
+	<tile id='ardoni essence.ico' sheet='ardoni essence ico.png' x='0'/>
+	<tile id='a' equals='ardoni essence'/>
+	<item id="ardoni essence" type="resource" cost="10" weight="5" icon="ardoni essence.ico" />
+	<area id="example" width="100" height="200">
+		<init> <runAreaLoad/></init>
+		<onLoad>
+		</onLoad>
+		<tiles id="ardoni world tile1" start="0" end="1"/>
+		<ore id="ardoni essence" start="0.0" end="0.6" percent="0.1" tile="ardoni world tile1" />
+	</area>
+	<enemy id="firesow" tile="model alpha terminator"  element="fire" passEnemies="true" health="50" range="10" speed="1" sleep="sleep" flying="true"  defense="3" knockback="false" fps="8" bgm="boss" vertical="true" friendlyFire="false" underwater="true"  passFence="true" attack_sfx="none" needsAttack="true" type='surface'>
+		<attack type='melee' range='10' animation='fire' damage='1' sfx='dragon_atk' cooldown='20'/>
+	</enemy>
+</data>

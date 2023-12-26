@@ -1,0 +1,12 @@
+<data>
+    <tilesheet id="thalleous agr.png" width ="12" height="20"/>
+    <tile id="thalleous" sheet="thalleous agr.png" x="0" y="0"/>
+    <animation id="thalleous.walk" count="4" x="0" y="0"/>
+    <animation id="thalleous.idle">
+        <frame x="5" y="0"  length='11'/>
+        <frame x='6' y='0' length='1'/>
+    </animation>
+    <animation id="thalleous.talk" count="2" x="4" y="0" />
+    <tilesheet id="sendarisGlow.png" width="13" height="22" />
+    <tile id="sendarisglow" sheet="sendarisGlow.png" x="0" y="0"/>
+</data>
