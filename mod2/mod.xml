@@ -4,7 +4,7 @@
     <description>Adds some lore and quests based on the webseries 'Songs of War' (NOTE: this is completely independent of the 'songs of war mod')</description>
     <author>The old one</author>
     <version>0.1.0</version>
-    <!-- <requires>Full Version</requires>uwu-->
+    <!-- <requires>Full Version</requires> uwu-->
     <init>
         <include id="lang/dailogue.xml"/>
         <include id="quests/quests.xml"/>
