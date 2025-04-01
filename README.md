@@ -21,3 +21,5 @@ the original ardoni also makes a ship for you, with some of the ardoni you free 
 if you manage to find out how to change jumpcost, let the original ardoni give a recipe for a new item to use as jumpcost for this new system, if it's only navigatable by this and similar ships ;
 you first can go to an ardoni safe haven, made to protect them from the ongoing war;
 they question you and let you go when you show them a card given to you by the lone ardoni to prove you mean no harm;  
+
+temporary change
